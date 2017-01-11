@@ -1,0 +1,1264 @@
+<transformation>
+  <info>
+    <name>Validate_Maxim_Header</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2016&#x2f;12&#x2f;18 16&#x3a;38&#x3a;58.061</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#x2f;12&#x2f;27 17&#x3a;57&#x3a;51.810</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>Reads the 1st  line header and validates in jscript&#xa;sets b_valid_file &#x3d; 1&#x2f;0  for next step processing&#xa;&#xa;&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Position &#x3d; 26&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Fieldname &#x3d; Nicotine&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Comments &#x3d; null&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Type &#x3d; String&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Length &#x3d; -1&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Precision &#x3d; -1&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - Origin &#x3d; ti&#x3a;maxim&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - myrowcount &#x3d; 17&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - result &#x3d; 1&#xa;2016&#x2f;12&#x2f;14 18&#x3a;26&#x3a;45 - Write to log.0 - </note>
+      <xloc>144</xloc>
+      <yloc>256</yloc>
+      <width>378</width>
+      <heigth>234</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>204</backgroundcolorred>
+      <backgroundcolorgreen>204</backgroundcolorgreen>
+      <backgroundcolorblue>204</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <order>
+  <hop> <from>Set field value</from><to>bl&#x3a; Validate_Maxim_Header</to><enabled>Y</enabled> </hop>
+  <hop> <from>bl&#x3a; Validate_Maxim_Header</from><to>st&#x3a; Mapping &#x28;sub-transformation&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>si&#x3a;Get System Info</from><to>Set field value</to><enabled>Y</enabled> </hop>
+  <hop> <from>gr&#x3a; Get rows from result</from><to>si&#x3a;Get System Info</to><enabled>Y</enabled> </hop>
+  <hop> <from>bl&#x3a; Validate_Maxim_Header</from><to>ti&#x3a;maxim</to><enabled>Y</enabled> </hop>
+  <hop> <from>ti&#x3a;maxim</from><to>Modified Java Script  </to><enabled>Y</enabled> </hop>
+  <hop> <from>HeaderValid</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Set Variables</from><to>Copy rows to result 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script  </from><to>sv_remove</to><enabled>Y</enabled> </hop>
+  <hop> <from>sv_remove</from><to>HeaderValid</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Copy rows to result 2</name>
+    <type>RowsToResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1280</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>HeaderValid</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Valid Header</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>880</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script  </name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;zero base&#x3a;  jan &#x3d; 0, feb &#x3d; 1 &#xa;&#x2f;&#x2f; DoB  &#x3d; 3&#x2f;17&#x2f;2016&#xa;&#x2f;&#x2f; convert to 2016-03-17   yyyy-mm-dd&#xa;&#x2f;&#x2f; returns jr_dob_date &#x3d; 2016-03-17&#xa;&#xa;review_code &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;try &#x7b; &#xa;&#xa;&#x2f;&#x2f;ClinicNumber&#xa;s_clinic_number &#x3d; ClinicNumber&#x3b;&#xa;clinic_number &#x3d; &#x22;ClinicNumber&#x22;&#x3b;&#xa;j_clinic_number &#x3d; &#x28;&#x21;s_clinic_number&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_clinic_number&#x29; &#x3b;&#xa;b_is_clinic_number &#x3d; j_clinic_number.equals&#x28;clinic_number&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;ScreeningDate&#xa;s_screening_date &#x3d; ScreeningDate &#x3b;&#xa;screening_date &#x3d; &#x22;ScreeningDate&#x22;&#x3b;&#xa;j_screening_date &#x3d; &#x28;&#x21;s_screening_date&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_screening_date&#x29; &#x3b;&#xa;b_is_screening_date &#x3d; j_screening_date.equals&#x28;screening_date&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;EmployeeId&#xa;s_employeeid &#x3d; EmployeeId&#x3b;&#xa;employeeid &#x3d; &#x22;EmployeeId&#x22;&#x3b;&#xa;j_employeeid &#x3d; &#x28;&#x21;s_employeeid&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_employeeid&#x29; &#x3b;&#xa;b_is_employeeid &#x3d; j_employeeid.equals&#x28;employeeid&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;FirstName&#xa;s_firstname &#x3d; FirstName &#x3b;&#xa;firstname &#x3d; &#x22;FirstName&#x22;&#x3b;&#xa;j_firstname &#x3d; &#x28;&#x21;s_firstname&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_firstname&#x29; &#x3b;&#xa;b_is_firstname &#x3d; j_firstname.equals&#x28;firstname&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;LastName&#xa;s_lastname &#x3d; LastName &#x3b;&#xa;lastname &#x3d; &#x22;LastName&#x22;&#x3b;&#xa;j_lastname &#x3d; &#x28;&#x21;s_lastname&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_lastname&#x29; &#x3b;&#xa;b_is_lastname &#x3d; j_lastname.equals&#x28;lastname&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;Gender&#xa;s_gender &#x3d; Gender &#x3b;&#xa;gender &#x3d; &#x22;Gender&#x22;&#x3b;&#xa;j_gender &#x3d; &#x28;&#x21;s_gender&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_gender&#x29; &#x3b;&#xa;b_is_gender &#x3d; j_gender.equals&#x28;gender&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;DoB&#xa;s_dob &#x3d; DoB &#x3b;&#xa;dob &#x3d; &#x22;DoB&#x22;&#x3b;&#xa;j_dob &#x3d; &#x28;&#x21;s_dob&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_dob&#x29; &#x3b;&#xa;b_is_dob &#x3d; j_dob.equals&#x28;dob&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;TotalCholesterolScreening&#xa;s_totalcholesterolscreening &#x3d; TotalCholesterolScreening &#x3b;&#xa;totalcholesterolscreening &#x3d; &#x22;TotalCholesterolScreening&#x22;&#x3b;&#xa;j_totalcholesterolscreening &#x3d; &#x28;&#x21;s_totalcholesterolscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_totalcholesterolscreening&#x29; &#x3b;&#xa;b_is_totalcholesterolscreening &#x3d; j_totalcholesterolscreening.equals&#x28;totalcholesterolscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa; &#xa;&#x2f;&#x2f;HDLScreening&#xa;s_hdlscreening &#x3d; HDLScreening  &#x3b;&#xa;hdlscreening &#x3d; &#x22;HDLScreening&#x22;&#x3b;&#xa;j_hdlscreening &#x3d; &#x28;&#x21;s_hdlscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_hdlscreening&#x29; &#x3b;&#xa;b_is_hdlscreening &#x3d; j_hdlscreening.equals&#x28;hdlscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;TriglyceridesScreening&#xa;s_triglyceridesscreening &#x3d; TriglyceridesScreening &#x3b;&#xa;triglyceridesscreening &#x3d; &#x22;TriglyceridesScreening&#x22;&#x3b;&#xa;j_triglyceridesscreening &#x3d; &#x28;&#x21;s_triglyceridesscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_triglyceridesscreening&#x29; &#x3b;&#xa;b_is_triglyceridesscreening &#x3d; j_triglyceridesscreening.equals&#x28;triglyceridesscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;TCOverHDLScreening&#xa;s_tcoverhdlscreening &#x3d;  TCOverHDLScreening &#x3b;&#xa;tcoverhdlscreening &#x3d; &#x22;TCOverHDLScreening&#x22;&#x3b;&#xa;j_tcoverhdlscreening &#x3d; &#x28;&#x21;s_tcoverhdlscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_tcoverhdlscreening&#x29; &#x3b;&#xa;b_is_tcoverhdlscreening &#x3d; j_tcoverhdlscreening.equals&#x28;tcoverhdlscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;LDLsScreening&#xa;s_ldlsscreening &#x3d; LDLsScreening &#x3b;&#xa;ldlsscreening &#x3d; &#x22;LDLsScreening&#x22;&#x3b;&#xa;j_ldlsscreening &#x3d; &#x28;&#x21;s_ldlsscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_ldlsscreening&#x29; &#x3b;&#xa;b_is_ldlsscreening &#x3d; j_ldlsscreening.equals&#x28;ldlsscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;FastingGlucose&#xa;s_fastingglucose &#x3d;  FastingGlucose&#x3b;&#xa;fastingglucose &#x3d; &#x22;FastingGlucose&#x22;&#x3b;&#xa;j_fastingglucose &#x3d; &#x28;&#x21;s_fastingglucose&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_fastingglucose&#x29; &#x3b;&#xa;b_is_fastingglucose &#x3d; j_fastingglucose.equals&#x28;fastingglucose&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;NonFastingGlucose&#xa;s_nonfastingglucose &#x3d; NonFastingGlucose &#x3b;&#xa;nonfastingglucose &#x3d; &#x22;NonFastingGlucose&#x22;&#x3b;&#xa;j_nonfastingglucose &#x3d; &#x28;&#x21;s_nonfastingglucose&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_nonfastingglucose&#x29; &#x3b;&#xa;b_is_nonfastingglucose &#x3d; j_nonfastingglucose.equals&#x28;nonfastingglucose&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;SystolicBPScreening&#xa;s_systolicbpscreening &#x3d; SystolicBPScreening &#x3b;&#xa;systolicbpscreening &#x3d; &#x22;SystolicBPScreening&#x22;&#x3b;&#xa;j_systolicbpscreening &#x3d; &#x28;&#x21;s_systolicbpscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_systolicbpscreening&#x29; &#x3b;&#xa;b_is_systolicbpscreening &#x3d; j_systolicbpscreening.equals&#x28;systolicbpscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;DiastolicBPScreening&#xa;s_diastolicbpscreening &#x3d; DiastolicBPScreening &#x3b;&#xa;diastolicbpscreening &#x3d; &#x22;DiastolicBPScreening&#x22;&#x3b;&#xa;j_diastolicbpscreening &#x3d; &#x28;&#x21;s_diastolicbpscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_diastolicbpscreening&#x29; &#x3b;&#xa;b_is_diastolicbpscreening &#x3d; j_diastolicbpscreening.equals&#x28;diastolicbpscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;BMIScreening&#xa;s_bmiscreening &#x3d; BMIScreening &#x3b;&#xa;bmiscreening &#x3d; &#x22;BMIScreening&#x22;&#x3b;&#xa;j_bmiscreening &#x3d; &#x28;&#x21;s_bmiscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_bmiscreening&#x29; &#x3b;&#xa;b_is_bmiscreening &#x3d; j_bmiscreening.equals&#x28;bmiscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;BodyFatPercentageScreening&#xa;s_bodyfatpercentagescreening &#x3d; BodyFatPercentageScreening &#x3b;&#xa;bodyfatpercentagescreening &#x3d; &#x22;BodyFatPercentageScreening&#x22;&#x3b;&#xa;j_bodyfatpercentagescreening &#x3d; &#x28;&#x21;s_bodyfatpercentagescreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_bodyfatpercentagescreening&#x29; &#x3b;&#xa;b_is_bodyfatpercentagescreening &#x3d; j_bodyfatpercentagescreening.equals&#x28;bodyfatpercentagescreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;BoneDensityTScore&#xa;s_bonedensitytscore &#x3d; BoneDensityTScore &#x3b;&#xa;bonedensitytscore &#x3d; &#x22;BoneDensityTScore&#x22;&#x3b;&#xa;j_bonedensitytscore &#x3d; &#x28;&#x21;s_bonedensitytscore&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_bonedensitytscore&#x29; &#x3b;&#xa;b_is_bonedensitytscore &#x3d; j_bonedensitytscore.equals&#x28;bonedensitytscore&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;HeightFt&#xa;s_heightft &#x3d; HeightFt &#x3b;&#xa;heightft &#x3d; &#x22;HeightFt&#x22;&#x3b;&#xa;j_heightft &#x3d; &#x28;&#x21;s_heightft&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_heightft&#x29; &#x3b;&#xa;b_is_heightft &#x3d; j_heightft.equals&#x28;heightft&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2f; HeightInplusHeightFractionScreening&#xa;s_heightinplusheightfractionscreening &#x3d; HeightInplusHeightFractionScreening &#x3b;&#xa;heightinplusheightfractionscreening &#x3d; &#x22;HeightInplusHeightFractionScreening&#x22;&#x3b;&#xa;j_heightinplusheightfractionscreening &#x3d; &#x28;&#x21;s_heightinplusheightfractionscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_heightinplusheightfractionscreening&#x29; &#x3b;&#xa;b_is_heightinplusheightfractionscreening &#x3d; j_heightinplusheightfractionscreening.equals&#x28;heightinplusheightfractionscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;WaistplusWaistfractionScreening&#xa;s_waistpluswaistfractionscreening &#x3d; WeightplusWeightFractionScreening &#x3b;&#xa;waistpluswaistfractionscreening &#x3d; &#x22;WeightplusWeightFractionScreening&#x22;&#x3b;&#xa;j_waistpluswaistfractionscreening &#x3d; &#x28;&#x21;s_waistpluswaistfractionscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_waistpluswaistfractionscreening&#x29; &#x3b;&#xa;b_is_waistpluswaistfractionscreening &#x3d; j_waistpluswaistfractionscreening.equals&#x28;waistpluswaistfractionscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;RestingHeartRateScreening&#xa;s_restingheartratescreening &#x3d; RestingHeartRateScreening &#x3b;&#xa;restingheartratescreening &#x3d; &#x22;RestingHeartRateScreening&#x22;&#x3b;&#xa;j_restingheartratescreening &#x3d; &#x28;&#x21;s_restingheartratescreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_restingheartratescreening&#x29; &#x3b;&#xa;b_is_restingheartratescreening &#x3d; j_restingheartratescreening.equals&#x28;restingheartratescreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;WaistplusWaistfractionScreening&#xa;s_waistpluswaistfractionscreening &#x3d; WaistplusWaistfractionScreening  &#x3b;&#xa;waistpluswaistfractionscreening &#x3d; &#x22;WaistplusWaistfractionScreening&#x22;&#x3b;&#xa;j_waistpluswaistfractionscreening &#x3d; &#x28;&#x21;s_waistpluswaistfractionscreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_waistpluswaistfractionscreening&#x29; &#x3b;&#xa;b_is_waistpluswaistfractionscreening &#x3d; j_waistpluswaistfractionscreening.equals&#x28;waistpluswaistfractionscreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;A1CPercentageScreening&#xa;s_a1cpercentagescreening &#x3d; A1CPercentageScreening &#x3b;&#xa;a1cpercentagescreening &#x3d; &#x22;A1CPercentageScreening&#x22;&#x3b;&#xa;j_a1cpercentagescreening &#x3d; &#x28;&#x21;s_a1cpercentagescreening&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_a1cpercentagescreening&#x29; &#x3b;&#xa;b_is_a1cpercentagescreening &#x3d; j_a1cpercentagescreening.equals&#x28;a1cpercentagescreening&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#x2f;&#x2f;Nicotine&#xa;&#xa;s_nicotine &#x3d; Nicotine &#x3b;&#xa;nicotine &#x3d; &#x22;Nicotine&#x22;&#x3b;&#xa;j_nicotine &#x3d; &#x28;&#x21;s_nicotine&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_nicotine&#x29; &#x3b;&#xa;b_is_nicotine &#x3d; j_nicotine.equals&#x28;nicotine&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;&#xa;b_valid_file  &#x3d; &#x28;b_is_clinic_number&#x29; &#x26;&#x26; &#x28;b_is_screening_date&#x29; &#x26;&#x26; &#x28;b_is_employeeid&#x29; &#x26;&#x26; &#x28;b_is_firstname&#x29; &#x26;&#x26; &#x28;b_is_lastname&#x29; &#x26;&#x26; &#x28;b_is_gender&#x29; &#x26;&#x26; &#x28;b_is_dob&#x29; &#x26;&#x26; &#x28;b_is_totalcholesterolscreening&#x29; &#x26;&#x26; &#x28;b_is_hdlscreening&#x29; &#x26;&#x26; &#x28;b_is_triglyceridesscreening&#x29; &#x26;&#x26; &#x28;b_is_tcoverhdlscreening&#x29; &#x26;&#x26; &#x28;b_is_ldlsscreening&#x29;  &#x26;&#x26; &#x28;b_is_fastingglucose&#x29; &#x26;&#x26; &#x28;b_is_nonfastingglucose&#x29; &#x26;&#x26; &#x28;b_is_systolicbpscreening&#x29; &#x26;&#x26; &#x28;b_is_diastolicbpscreening&#x29; &#x26;&#x26; &#x28;b_is_bmiscreening&#x29; &#x26;&#x26; &#x28;b_is_bodyfatpercentagescreening&#x29; &#x26;&#x26; &#x28;b_is_bonedensitytscore&#x29; &#x26;&#x26; &#x28;b_is_heightft&#x29; &#x26;&#x26; &#x28;b_is_heightinplusheightfractionscreening&#x29; &#x26;&#x26; &#x28;b_is_waistpluswaistfractionscreening&#x29; &#x26;&#x26; &#x28;b_is_restingheartratescreening&#x29; &#x26;&#x26; &#x28;b_is_a1cpercentagescreening&#x29; &#x26;&#x26; &#x28;b_is_nicotine&#x29; &#x3f; 1 &#x3a; 0&#x3b;&#xa;&#xa;review_code &#x2b;&#x3d; &#x28;b_valid_file&#x29; &#x3f; &#x22;&#x22; &#x3a; &#x22;Invalid File Header &#x22;&#x3b;&#xa;&#xa;error_fieldname &#x3d; b_valid_file &#x3b;&#xa;error_code &#x3d;  &#x28;b_valid_file&#x29; &#x3f; &#x22;&#x22; &#x3a; &#x22;header_error&#x22;&#x3b;&#xa;error_count &#x3d;  &#x28;b_valid_file&#x29; &#x3f; 0 &#x3a; 1&#x3b;&#xa;&#xa;&#xa;&#xa;&#x7d; catch &#x28;e&#x29; &#x7b;&#xa;&#xa;	review_code &#x3d; e&#x3b;&#xa;   &#xa; b_valid_file &#x3d; 0&#x3b;&#xa;	&#xa;&#xa;    &#xa;&#x7d;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>s_clinic_number</name>
+        <rename>s_clinic_number</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_clinic_number</name>
+        <rename>b_is_clinic_number</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_screening_date</name>
+        <rename>j_screening_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_screening_date</name>
+        <rename>b_is_screening_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_employeeid</name>
+        <rename>j_employeeid</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_employeeid</name>
+        <rename>b_is_employeeid</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_firstname</name>
+        <rename>j_firstname</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_firstname</name>
+        <rename>b_is_firstname</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_lastname</name>
+        <rename>j_lastname</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_lastname</name>
+        <rename>b_is_lastname</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_gender</name>
+        <rename>j_gender</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_gender</name>
+        <rename>b_is_gender</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob</name>
+        <rename>j_dob</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_dob</name>
+        <rename>b_is_dob</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_totalcholesterolscreening</name>
+        <rename>j_totalcholesterolscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_totalcholesterolscreening</name>
+        <rename>b_is_totalcholesterolscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_hdlscreening</name>
+        <rename>j_hdlscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_hdlscreening</name>
+        <rename>b_is_hdlscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_triglyceridesscreening</name>
+        <rename>j_triglyceridesscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_triglyceridesscreening</name>
+        <rename>b_is_triglyceridesscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_tcoverhdlscreening</name>
+        <rename>j_tcoverhdlscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_tcoverhdlscreening</name>
+        <rename>b_is_tcoverhdlscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_ldlsscreening</name>
+        <rename>j_ldlsscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_ldlsscreening</name>
+        <rename>b_is_ldlsscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_fastingglucose</name>
+        <rename>j_fastingglucose</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_fastingglucose</name>
+        <rename>b_is_fastingglucose</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_nonfastingglucose</name>
+        <rename>j_nonfastingglucose</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_nonfastingglucose</name>
+        <rename>b_is_nonfastingglucose</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_systolicbpscreening</name>
+        <rename>j_systolicbpscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_systolicbpscreening</name>
+        <rename>b_is_systolicbpscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_diastolicbpscreening</name>
+        <rename>j_diastolicbpscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_diastolicbpscreening</name>
+        <rename>b_is_diastolicbpscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_bmiscreening</name>
+        <rename>j_bmiscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_bmiscreening</name>
+        <rename>b_is_bmiscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_bodyfatpercentagescreening</name>
+        <rename>j_bodyfatpercentagescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_bodyfatpercentagescreening</name>
+        <rename>b_is_bodyfatpercentagescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_bonedensitytscore</name>
+        <rename>j_bonedensitytscore</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_bonedensitytscore</name>
+        <rename>b_is_bonedensitytscore</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_heightft</name>
+        <rename>j_heightft</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_heightft</name>
+        <rename>b_is_heightft</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_heightinplusheightfractionscreening</name>
+        <rename>j_heightinplusheightfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_heightinplusheightfractionscreening</name>
+        <rename>b_is_heightinplusheightfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_waistpluswaistfractionscreening</name>
+        <rename>j_waistpluswaistfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_waistpluswaistfractionscreening</name>
+        <rename>b_is_waistpluswaistfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_restingheartratescreening</name>
+        <rename>j_restingheartratescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_restingheartratescreening</name>
+        <rename>b_is_restingheartratescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_waistpluswaistfractionscreening</name>
+        <rename>j_waistpluswaistfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_waistpluswaistfractionscreening</name>
+        <rename>b_is_waistpluswaistfractionscreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_a1cpercentagescreening</name>
+        <rename>j_a1cpercentagescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_a1cpercentagescreening</name>
+        <rename>b_is_a1cpercentagescreening</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_nicotine</name>
+        <rename>j_nicotine</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_is_nicotine</name>
+        <rename>b_is_nicotine</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>review_code</name>
+        <rename>review_code</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_valid_file</name>
+        <rename>b_valid_file</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>error_fieldname</name>
+        <rename>error_fieldname</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>error_code</name>
+        <rename>error_code</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>error_count</name>
+        <rename>error_count</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>832</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set field value</name>
+    <type>SetValueField</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>trans_batch_id</name>
+        <replaceby>p_trans_batch_id</replaceby>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <replaceby>p_transform_name</replaceby>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>bl&#x3a; Validate_Maxim_Header</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Log Validate_Maxim_Header</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>gr&#x3a; Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>shortfilename</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>size</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>extension</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>uri</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>lastmodifiedtime</name>
+        <type>Timestamp</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>112</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>si&#x3a;Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>ip</name>
+        <type>IP address</type>
+        </field>
+      <field>
+        <name>p_transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>p_trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Mapping &#x28;sub-transformation&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>ETL_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>shortfilename</parent><child>file_name</child></connector>
+       <connector><parent>ip</parent><child>ip</child></connector>
+       <connector><parent>system_date</parent><child>system_date</child></connector>
+       <connector><parent>start_log_time</parent><child>start_log_time</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>912</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>ti&#x3a;maxim</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>Y</accept_filenames>
+    <passing_through_fields>Y</passing_through_fields>
+    <accept_field>filename</accept_field>
+    <accept_stepname>bl&#x3a; Validate_Maxim_Header</accept_stepname>
+    <separator>,</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x2f;Users&#x2f;jchiappone&#x2f;Documents&#x2f;BIOIQ&#x2f;LandingZone&#x2f;bioiq_maxim_Boeing2016_screeningbiometrics_pre-populated_cumulative_20161122.csv</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>ClinicNumber</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ScreeningDate</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EmployeeId</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>FirstName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LastName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Gender</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>DoB</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TotalCholesterolScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HDLScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TriglyceridesScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TCOverHDLScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LDLsScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>FastingGlucose</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>NonFastingGlucose</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SystolicBPScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>DiastolicBPScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BMIScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BodyFatPercentageScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BoneDensityTScore</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HeightFt</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HeightInplusHeightFractionScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>WeightplusWeightFractionScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>RestingHeartRateScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>WaistplusWaistfractionScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>A1CPercentageScreening</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Nicotine</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>1</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>uri</field_name>
+        <variable_name>shortfile</variable_name>
+        <variable_type>PARENT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1088</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sv_remove</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>ClinicNumber</name>
+      </remove>      <remove>        <name>ScreeningDate</name>
+      </remove>      <remove>        <name>EmployeeId</name>
+      </remove>      <remove>        <name>FirstName</name>
+      </remove>      <remove>        <name>LastName</name>
+      </remove>      <remove>        <name>Gender</name>
+      </remove>      <remove>        <name>DoB</name>
+      </remove>      <remove>        <name>TotalCholesterolScreening</name>
+      </remove>      <remove>        <name>HDLScreening</name>
+      </remove>      <remove>        <name>TriglyceridesScreening</name>
+      </remove>      <remove>        <name>TCOverHDLScreening</name>
+      </remove>      <remove>        <name>LDLsScreening</name>
+      </remove>      <remove>        <name>FastingGlucose</name>
+      </remove>      <remove>        <name>NonFastingGlucose</name>
+      </remove>      <remove>        <name>SystolicBPScreening</name>
+      </remove>      <remove>        <name>DiastolicBPScreening</name>
+      </remove>      <remove>        <name>BMIScreening</name>
+      </remove>      <remove>        <name>BodyFatPercentageScreening</name>
+      </remove>      <remove>        <name>BoneDensityTScore</name>
+      </remove>      <remove>        <name>HeightFt</name>
+      </remove>      <remove>        <name>HeightInplusHeightFractionScreening</name>
+      </remove>      <remove>        <name>WeightplusWeightFractionScreening</name>
+      </remove>      <remove>        <name>RestingHeartRateScreening</name>
+      </remove>      <remove>        <name>WaistplusWaistfractionScreening</name>
+      </remove>      <remove>        <name>A1CPercentageScreening</name>
+      </remove>      <remove>        <name>Nicotine</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>880</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

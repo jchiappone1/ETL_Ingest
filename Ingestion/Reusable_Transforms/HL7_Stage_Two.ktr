@@ -1,0 +1,1066 @@
+<transformation>
+  <info>
+    <name>HL7_Stage_Two</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection>IQ</connection>
+<schema/>
+<table>sdi_transform_logs</table>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject>ti&#x3a; sdi_hl7_stageone</subject></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject>ti&#x3a; sdi_hl7_stageone</subject></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user/>
+  <created_date>2016&#x2f;09&#x2f;25 16&#x3a;24&#x3a;34.112</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#x2f;10&#x2f;06 00&#x3a;05&#x3a;12.714</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>ETL Logging</note>
+      <xloc>640</xloc>
+      <yloc>16</yloc>
+      <width>88</width>
+      <heigth>26</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>HL7  Message Results&#x3a;  &#x28;parse entities to&#x29;&#xa;&#xa;&#x27;1&#x27;,&#x27;MSH&#x27;,&#x27;Message_Header&#x27;&#xa;&#x27;2&#x27;,&#x27;PID&#x27;,&#x27;Patient_Information&#x27;&#xa;&#x27;3&#x27;,&#x27;ORC&#x27;,&#x27;Common_Order&#x27;&#xa;&#x27;4&#x27;,&#x27;OBR&#x27;,&#x27;Observation_Request&#x27;&#xa;&#x27;5&#x27;,&#x27;OBX&#x27;,&#x27;Observation&#x27;&#xa;&#x27;6&#x27;,&#x27;ZEF&#x27;,&#x27;Encapsulated Data Format&#x27;&#xa;&#x27;7&#x27;,&#x27;NTF&#x27;,&#x27;Notes_and_Comments&#x27;&#xa;&#x27;8&#x27;,&#x27;ZPS&#x27;,&#x27;Place of Service&#x27;&#xa;&#xa; HL7_Stage_Two  is a hub to the parsers &#x28;PID,OBR,OBX&#x29; stages the data by elements&#xa;</note>
+      <xloc>848</xloc>
+      <yloc>0</yloc>
+      <width>535</width>
+      <heigth>218</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>204</backgroundcolorred>
+      <backgroundcolorgreen>204</backgroundcolorgreen>
+      <backgroundcolorblue>204</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Reads from HL7 stage-one file parsing by Message Result</note>
+      <xloc>720</xloc>
+      <yloc>736</yloc>
+      <width>369</width>
+      <heigth>26</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>IQ</name>
+    <server>&#x24;&#x7b;bioiq.cm.db.server&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;bioiq.cm.db.name&#x7d;</database>
+    <port>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</port>
+    <username>&#x24;&#x7b;bioiq.cm.db.user&#x7d;</username>
+    <password>&#x24;&#x7b;bioiq.cm.db.password&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Add constants 2</from><to>Log HL7 Stages</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get System Info</from><to>Add constants 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Log HL7 Stages</from><to>Mapping &#x28;sub-transformation&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>aq&#x3a; Analytic Query</from><to>sv&#x3a; Modified Java Script Value </to><enabled>Y</enabled> </hop>
+  <hop> <from>sv&#x3a; Modified Java Script Value </from><to>sc&#x3a; Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>cv&#x3a; unused</from><to>st&#x3a; Map&#x28;OBX&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>to&#x3a; sdi_hl7_common_order ORC</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>st&#x3a; Map&#x28;PID&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>st&#x3a; Map&#x28;OBR&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>cv&#x3a; unused</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>to&#x3a; sdi_hl7_zps</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>to&#x3a; sdi_etl_hl7_zef</to><enabled>Y</enabled> </hop>
+  <hop> <from>sc&#x3a; Switch &#x2f; Case</from><to>to&#x3a; sdi_hl7_nte</to><enabled>Y</enabled> </hop>
+  <hop> <from>ti&#x3a; sdi_hl7_stageone</from><to>aq&#x3a; Analytic Query</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>filename</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>496</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>ip</name>
+        <type>IP address</type>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>parent_job_id</name>
+        <type>job batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>80</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Log HL7 Stages</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Log HL7 Stages</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>384</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mapping &#x28;sub-transformation&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>ETL_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>filename</parent><child>file_name</child></connector>
+       <connector><parent>ip</parent><child>ip</child></connector>
+       <connector><parent>system_date</parent><child>system_date</child></connector>
+       <connector><parent>start_log_time</parent><child>start_log_time</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>aq&#x3a; Analytic Query</name>
+    <type>AnalyticQuery</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>prevPID</aggregate>
+          <subject>segment_type_id</subject>
+          <type>LAG</type>
+          <valuefield>1</valuefield>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>464</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>cv&#x3a; unused</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>obx_23</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>obx_24</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>obx_25</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>process_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sc&#x3a; Switch &#x2f; Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>segment_type_id</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Dummy &#x28;do nothing&#x29;</default_target_step>
+<cases><case><value>ORC</value>
+<target_step>to&#x3a; sdi_hl7_common_order ORC</target_step>
+</case><case><value>OBR</value>
+<target_step>st&#x3a; Map&#x28;OBR&#x29;</target_step>
+</case><case><value>OBX</value>
+<target_step>cv&#x3a; unused</target_step>
+</case><case><value>NTE</value>
+<target_step>to&#x3a; sdi_hl7_nte</target_step>
+</case><case><value>ZEF</value>
+<target_step>to&#x3a; sdi_etl_hl7_zef</target_step>
+</case><case><value>ZPS</value>
+<target_step>to&#x3a; sdi_hl7_zps</target_step>
+</case><case><value>PID</value>
+<target_step>st&#x3a; Map&#x28;PID&#x29;</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Map&#x28;OBR&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>HL7_obr_parser</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>segment_type_id</parent><child>segment_type_id</child></connector>
+       <connector><parent>field_2</parent><child>field_2</child></connector>
+       <connector><parent>Field_3</parent><child>Field_3</child></connector>
+       <connector><parent>Field_4</parent><child>Field_4</child></connector>
+       <connector><parent>Field_5</parent><child>Field_5</child></connector>
+       <connector><parent>Field_6</parent><child>Field_6</child></connector>
+       <connector><parent>Field_7</parent><child>Field_7</child></connector>
+       <connector><parent>Field_8</parent><child>Field_8</child></connector>
+       <connector><parent>Field_9</parent><child>Field_9</child></connector>
+       <connector><parent>Field_10</parent><child>Field_10</child></connector>
+       <connector><parent>Field_11</parent><child>Field_11</child></connector>
+       <connector><parent>Field_12</parent><child>Field_12</child></connector>
+       <connector><parent>Field_13</parent><child>Field_13</child></connector>
+       <connector><parent>Field_14</parent><child>Field_14</child></connector>
+       <connector><parent>Field_15</parent><child>Field_15</child></connector>
+       <connector><parent>Field_16</parent><child>Field_16</child></connector>
+       <connector><parent>Field_17</parent><child>Field_17</child></connector>
+       <connector><parent>Field_18</parent><child>Field_18</child></connector>
+       <connector><parent>Field_19</parent><child>Field_19</child></connector>
+       <connector><parent>Field_20</parent><child>Field_20</child></connector>
+       <connector><parent>Field_21</parent><child>Field_21</child></connector>
+       <connector><parent>Field_22</parent><child>Field_22</child></connector>
+       <connector><parent>process_id</parent><child>process_id</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>112</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Map&#x28;OBX&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>HL7 obx_parser</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>segment_type_id</parent><child>segment_type_id</child></connector>
+       <connector><parent>field_2</parent><child>field_2</child></connector>
+       <connector><parent>Field_3</parent><child>Field_3</child></connector>
+       <connector><parent>Field_4</parent><child>Field_4</child></connector>
+       <connector><parent>Field_5</parent><child>Field_5</child></connector>
+       <connector><parent>Field_6</parent><child>Field_6</child></connector>
+       <connector><parent>Field_7</parent><child>Field_7</child></connector>
+       <connector><parent>Field_8</parent><child>Field_8</child></connector>
+       <connector><parent>Field_9</parent><child>Field_9</child></connector>
+       <connector><parent>Field_10</parent><child>Field_10</child></connector>
+       <connector><parent>Field_11</parent><child>Field_11</child></connector>
+       <connector><parent>Field_12</parent><child>Field_12</child></connector>
+       <connector><parent>Field_13</parent><child>Field_13</child></connector>
+       <connector><parent>Field_14</parent><child>Field_14</child></connector>
+       <connector><parent>Field_15</parent><child>Field_15</child></connector>
+       <connector><parent>Field_16</parent><child>Field_16</child></connector>
+       <connector><parent>Field_17</parent><child>Field_17</child></connector>
+       <connector><parent>Field_18</parent><child>Field_18</child></connector>
+       <connector><parent>Field_19</parent><child>Field_19</child></connector>
+       <connector><parent>Field_20</parent><child>Field_20</child></connector>
+       <connector><parent>Field_21</parent><child>Field_21</child></connector>
+       <connector><parent>Field_22</parent><child>Field_22</child></connector>
+       <connector><parent>process_id</parent><child>process_id</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>176</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Map&#x28;PID&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>HL7 pid_parser</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step>mi&#x3a; HL7_PID</output_step>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>segment_type_id</parent><child>segment_type_id</child></connector>
+       <connector><parent>field_2</parent><child>field_2</child></connector>
+       <connector><parent>Field_9</parent><child>Field_9</child></connector>
+       <connector><parent>Field_8</parent><child>Field_8</child></connector>
+       <connector><parent>Field_7</parent><child>Field_7</child></connector>
+       <connector><parent>Field_6</parent><child>Field_6</child></connector>
+       <connector><parent>Field_5</parent><child>Field_5</child></connector>
+       <connector><parent>Field_4</parent><child>Field_4</child></connector>
+       <connector><parent>Field_3</parent><child>Field_3</child></connector>
+       <connector><parent>Field_22</parent><child>Field_22</child></connector>
+       <connector><parent>Field_21</parent><child>Field_21</child></connector>
+       <connector><parent>Field_20</parent><child>Field_20</child></connector>
+       <connector><parent>Field_19</parent><child>Field_19</child></connector>
+       <connector><parent>Field_18</parent><child>Field_18</child></connector>
+       <connector><parent>Field_17</parent><child>Field_17</child></connector>
+       <connector><parent>Field_16</parent><child>Field_16</child></connector>
+       <connector><parent>Field_15</parent><child>Field_15</child></connector>
+       <connector><parent>Field_14</parent><child>Field_14</child></connector>
+       <connector><parent>Field_13</parent><child>Field_13</child></connector>
+       <connector><parent>Field_12</parent><child>Field_12</child></connector>
+       <connector><parent>Field_11</parent><child>Field_11</child></connector>
+       <connector><parent>Field_10</parent><child>Field_10</child></connector>
+       <connector><parent>process_id</parent><child>process_id</child></connector>
+       <connector><parent>filename</parent><child>filename</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>112</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sv&#x3a; Modified Java Script Value </name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script> &#x2f;&#x2f;Script here&#xa;&#xa; &#xa;var joe&#x3b;&#xa;s_segment_type_id &#x3d;   segment_type_id&#xa;j_segment_type_id &#x3d; &#x28;&#x21;s_segment_type_id&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_segment_type_id&#x29; &#x3b;&#xa; &#xa;r_pid &#x3d; new java.lang.String&#x28;&#x22;&#x22;&#x29;&#x3b;&#xa;&#xa;r_is_pid &#x3d;  s_segment_type_id &#x3d;&#x3d; &#x27;PID&#x27; &#x3f; Field_4 &#x3a; &#x22;&#x22;&#x3b; &#xa;&#xa;&#xa;if &#x28;segment_type_id.equals&#x28;&#x22;PID&#x22;&#x29;&#x29;&#x7b;&#xa;	 &#xa;  joe &#x3d; Field_4&#xa;	 	&#xa;&#x7d;&#xa;&#xa;s_filename &#x3d; filename&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>joe</name>
+        <rename>joe</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>s_filename</name>
+        <rename>s_filename</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>720</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>ti&#x3a; sdi_hl7_stageone</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <sql>select &#x2a; from sdi_hl7_stageone&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_etl_hl7_zef</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>sdi_hl7_zef_data_format</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>process_id</column_name>
+          <stream_name>process_id</stream_name>
+        </field>
+        <field>
+          <column_name>pid_3_lab_assign_pid</column_name>
+          <stream_name>joe</stream_name>
+        </field>
+        <field>
+          <column_name>zef_0_segment_type_id</column_name>
+          <stream_name>field_2</stream_name>
+        </field>
+        <field>
+          <column_name>zef_1_seq_number</column_name>
+          <stream_name>Field_3</stream_name>
+        </field>
+        <field>
+          <column_name>zef_2_embedded_pdf</column_name>
+          <stream_name>Field_4</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>880</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_hl7_common_order ORC</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>sdi_hl7_common_order</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>process_id</column_name>
+          <stream_name>process_id</stream_name>
+        </field>
+        <field>
+          <column_name>orc_1_order_control</column_name>
+          <stream_name>field_2</stream_name>
+        </field>
+        <field>
+          <column_name>orc_2_1_accession_id</column_name>
+          <stream_name>Field_3</stream_name>
+        </field>
+        <field>
+          <column_name>orc_3_1_filler_accession_id</column_name>
+          <stream_name>Field_4</stream_name>
+        </field>
+        <field>
+          <column_name>orc_4_placer_group_num</column_name>
+          <stream_name>Field_5</stream_name>
+        </field>
+        <field>
+          <column_name>orc_5_order_status</column_name>
+          <stream_name>Field_6</stream_name>
+        </field>
+        <field>
+          <column_name>orc_6_response_flag</column_name>
+          <stream_name>Field_7</stream_name>
+        </field>
+        <field>
+          <column_name>orc_7_quantity</column_name>
+          <stream_name>Field_8</stream_name>
+        </field>
+        <field>
+          <column_name>orc_8_parent</column_name>
+          <stream_name>Field_9</stream_name>
+        </field>
+        <field>
+          <column_name>orc_9_transaction_datetime</column_name>
+          <stream_name>Field_10</stream_name>
+        </field>
+        <field>
+          <column_name>orc_10_entered_by</column_name>
+          <stream_name>Field_11</stream_name>
+        </field>
+        <field>
+          <column_name>orc_11_verified_by</column_name>
+          <stream_name>Field_12</stream_name>
+        </field>
+        <field>
+          <column_name>orc_12_1_ordering_provider_id</column_name>
+          <stream_name>Field_13</stream_name>
+        </field>
+        <field>
+          <column_name>orc_13_enterer_location</column_name>
+          <stream_name>Field_14</stream_name>
+        </field>
+        <field>
+          <column_name>orc_14_call_back_phone</column_name>
+          <stream_name>Field_15</stream_name>
+        </field>
+        <field>
+          <column_name>orc_0_segment_type_id</column_name>
+          <stream_name>segment_type_id</stream_name>
+        </field>
+        <field>
+          <column_name>pid_3_lab_assign_pid</column_name>
+          <stream_name>joe</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>112</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_hl7_nte</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>sdi_hl7_nte_segments</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>nte_0_segment_type_id</column_name>
+          <stream_name>segment_type_id</stream_name>
+        </field>
+        <field>
+          <column_name>nte_1_seq_number</column_name>
+          <stream_name>field_2</stream_name>
+        </field>
+        <field>
+          <column_name>nte_2_comments_source</column_name>
+          <stream_name>Field_3</stream_name>
+        </field>
+        <field>
+          <column_name>pid_3_lab_assign_pid</column_name>
+          <stream_name>joe</stream_name>
+        </field>
+        <field>
+          <column_name>process_id</column_name>
+          <stream_name>process_id</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_hl7_zps</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>sdi_hl7_zps_place_of_service</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>zps_0_segment_type_id</column_name>
+          <stream_name>segment_type_id</stream_name>
+        </field>
+        <field>
+          <column_name>zps_1_seq_number</column_name>
+          <stream_name>field_2</stream_name>
+        </field>
+        <field>
+          <column_name>zps_2_facility</column_name>
+          <stream_name>Field_3</stream_name>
+        </field>
+        <field>
+          <column_name>zps_3_facility_name</column_name>
+          <stream_name>Field_4</stream_name>
+        </field>
+        <field>
+          <column_name>zps_4_1_facility_address</column_name>
+          <stream_name>Field_5</stream_name>
+        </field>
+        <field>
+          <column_name>zps_5_facility_phone_number</column_name>
+          <stream_name>Field_6</stream_name>
+        </field>
+        <field>
+          <column_name>zps_6_facility_contact</column_name>
+          <stream_name>Field_7</stream_name>
+        </field>
+        <field>
+          <column_name>zps_7_1_facility_director_title</column_name>
+          <stream_name>Field_8</stream_name>
+        </field>
+        <field>
+          <column_name>zps_8_facility_mneumonic</column_name>
+          <stream_name>Field_9</stream_name>
+        </field>
+        <field>
+          <column_name>zps_9_clia_number</column_name>
+          <stream_name>Field_10</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>752</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

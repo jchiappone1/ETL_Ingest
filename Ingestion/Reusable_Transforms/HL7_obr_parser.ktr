@@ -1,0 +1,1825 @@
+<transformation>
+  <info>
+    <name>HL7_obr_parser</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory>
+    <parameters>
+        <parameter>
+            <name>mypid</name>
+            <default_value/>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection>IQ</connection>
+<schema/>
+<table>sdi_transform_logs</table>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject>mi&#x3a; HL7_OBR</subject></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject>mo&#x3a; Mapping output specification</subject></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user/>
+  <created_date>2016&#x2f;09&#x2f;25 16&#x3a;24&#x3a;34.046</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#x2f;07&#x2f;12 17&#x3a;20&#x3a;14.552</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>ETL Logging</note>
+      <xloc>704</xloc>
+      <yloc>32</yloc>
+      <width>88</width>
+      <heigth>26</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>&#x27;OBR&#x27;,&#x27;Observation_Request&#x27;&#xa;&#xa;split fields to table&#x3a;&#xa;sdi_hl7_obr_order_seg</note>
+      <xloc>729</xloc>
+      <yloc>169</yloc>
+      <width>192</width>
+      <heigth>74</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>204</backgroundcolorred>
+      <backgroundcolorgreen>204</backgroundcolorgreen>
+      <backgroundcolorblue>204</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>IQ</name>
+    <server>&#x24;&#x7b;bioiq.cm.db.server&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;bioiq.cm.db.name&#x7d;</database>
+    <port>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</port>
+    <username>&#x24;&#x7b;bioiq.cm.db.user&#x7d;</username>
+    <password>&#x24;&#x7b;bioiq.cm.db.password&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>si&#x3a;Get System Info</from><to>st&#x3a; Map&#x28;Audit_Log&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 2</from><to>Log to ETL Logger</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get System Info</from><to>Add constants 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Log to ETL Logger</from><to>Mapping &#x28;sub-transformation&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Json output</from><to>si&#x3a;Get System Info</to><enabled>Y</enabled> </hop>
+  <hop> <from>dv&#x3a; Data Validator</from><to>Json output</to><enabled>Y</enabled> </hop>
+  <hop> <from>dv&#x3a; Data Validator</from><to>to&#x3a; sdi_hl7_OBR</to><enabled>Y</enabled> </hop>
+  <hop> <from>to&#x3a; sdi_hl7_OBR</from><to>mo&#x3a; Mapping output specification</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 4 &#x3a; &#x28;3_1,3_2&#x29;</from><to>sf&#x3a; Split Field 5&#x3a; &#x28;4_1 .. 4_3&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>sf&#x3a; Split Field 3&#x3a; &#x28;2_1,2_2&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 3&#x3a; &#x28;2_1,2_2&#x29;</from><to>sf&#x3a; Split Field 4 &#x3a; &#x28;3_1,3_2&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 5&#x3a; &#x28;4_1 .. 4_3&#x29;</from><to>sf&#x3a; Split Field 14&#x3a; &#x28;13_1,13_2&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 14&#x3a; &#x28;13_1,13_2&#x29;</from><to>sf&#x3a; Split Field 17&#x3a; &#x28;16_1 .. 16_8&#x29; </to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 17&#x3a; &#x28;16_1 .. 16_8&#x29; </from><to>sf&#x3a; Split Field 21&#x3a; &#x28;21_1 .. 20_3&#x29;  2</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 21&#x3a; &#x28;21_1 .. 20_3&#x29;  2</from><to>sf&#x3a; Split Field 26&#x3a; &#x28;26_1, 26_2&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 26&#x3a; &#x28;26_1, 26_2&#x29;</from><to>sf&#x3a; Split Field 27&#x3a; &#x28;27_1..27_6&#x29; unused</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 27&#x3a; &#x28;27_1..27_6&#x29; unused</from><to>Write to log</to><enabled>N</enabled> </hop>
+  <hop> <from>Write to log</from><to>dv&#x3a; Data Validator</to><enabled>N</enabled> </hop>
+  <hop> <from>cv&#x3a; unused</from><to>Calculator</to><enabled>N</enabled> </hop>
+  <hop> <from>mi&#x3a; HL7_OBR</from><to>cv&#x3a; unused</to><enabled>Y</enabled> </hop>
+  <hop> <from>cv&#x3a; unused</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>sf&#x3a; Split Field 27&#x3a; &#x28;27_1..27_6&#x29; unused</from><to>dv&#x3a; Data Validator</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>filename</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>275</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>cp_Field_3</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_3</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_4</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_4</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_5</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_5</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_14</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_14</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_17</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_17</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_21</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>Field_21</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_26</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>obr_26_0_linkto_pr_data</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>cp_Field_27</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>obr_27_0_quantity_timing</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>ip</name>
+        <type>IP address</type>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>parent_job_id</name>
+        <type>job batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>131</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Json output</name>
+    <type>JsonOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <outputValue>outputValue</outputValue>
+    <jsonBloc>hl7_pid</jsonBloc>
+    <nrRowsInBloc>1</nrRowsInBloc>
+    <operation_type>outputvalue</operation_type>
+    <compatibility_mode>N</compatibility_mode>
+    <encoding>UTF-8</encoding>
+    <addtoresult>N</addtoresult>
+    <file>
+      <name/>
+      <extention>js</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <create_parent_folder>N</create_parent_folder>
+      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
+      <servlet_output>N</servlet_output>
+      </file>
+    <fields>
+      <field>
+        <name>error_fieldname</name>
+        <element>error_fieldname</element>
+    </field>
+      <field>
+        <name>error_code</name>
+        <element>error_code</element>
+    </field>
+      <field>
+        <name>audit_code</name>
+        <element>audit_code</element>
+    </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Log to ETL Logger</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Log HL7_OBR</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>435</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mapping &#x28;sub-transformation&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>ETL_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>filename</parent><child>file_name</child></connector>
+       <connector><parent>ip</parent><child>ip</child></connector>
+       <connector><parent>system_date</parent><child>system_date</child></connector>
+       <connector><parent>start_log_time</parent><child>start_log_time</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>595</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>HELLO OBR</logmessage>
+    <fields>
+      <field>
+        <name>segment_type_id</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>cv&#x3a; unused</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>obr_22_observation_datetime</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_23_producer_charge</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_24_producer_section_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_25_order_result_status</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_26_0_linkto_pr_data</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_27_0_quantity_timing</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_28_courtesy_copies_to</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+      <field>
+        <name>obr_29_link_to_parent_order</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>Y</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>160</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dv&#x3a; Data Validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<validate_all>Y</validate_all>
+<concat_errors>Y</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>segment_type_id</name>
+<validation_name>lab_pid must exist</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>mi&#x3a; HL7_OBR</name>
+    <type>MappingInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>segment_type_id</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>field_2</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_3</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_4</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_5</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_6</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_7</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_8</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_9</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_10</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_12</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_11</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_13</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_14</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_15</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_16</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_17</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_18</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_19</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_20</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_21</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Field_22</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>process_id</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>row_number</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+        <select_unspecified>N</select_unspecified>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>32</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>mo&#x3a; Mapping output specification</name>
+    <type>MappingOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 14&#x3a; &#x28;13_1,13_2&#x29;</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_14</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_13_1_relevant_clinical_info</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_13_2_relevant_clinical_info_bc</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 17&#x3a; &#x28;16_1 .. 16_8&#x29; </name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_17</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_16_1_ordering_provider_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_13_2_relevant_clinical_info_bc</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_16_2_ordering_provider_lname</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_3_ordering_provider_f_initial</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_4_ordering_provider_m_initial</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_5_ordering_provider_suffix</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_6_ordering_provider_prefix</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_7_ordering_provider_degree</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_16_8_source_table</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>80</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 21&#x3a; &#x28;21_1 .. 20_3&#x29;  2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_21</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_20_1_producer_field1</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_20_2_microbiology_organism</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_20_3_coding_system</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 26&#x3a; &#x28;26_1, 26_2&#x29;</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>obr_26_0_linkto_pr_data</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_26_1_linkto_pr_ol_s</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_26_2_subid</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 27&#x3a; &#x28;27_1..27_6&#x29; unused</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>obr_27_0_quantity_timing</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_27_1_quantity_timing</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_27_2_unused</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_27_3_unused</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_27_4_unused</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_27_5_unused</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>obr_27_6_priority</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 3&#x3a; &#x28;2_1,2_2&#x29;</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_3</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_2_1_accession_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_2_2_application_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 4 &#x3a; &#x28;3_1,3_2&#x29;</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_4</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_3_1_labcorp_accesion_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_3_2_labcorp_app_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sf&#x3a; Split Field 5&#x3a; &#x28;4_1 .. 4_3&#x29;</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Field_5</splitfield>
+   <delimiter>&#x5e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>obr_4_1_observ_battery_id</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_4_2_observ_batterY_text</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>obr_4_3_name_coding_system</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>80</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>si&#x3a;Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>parent_job_id</name>
+        <type>job batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Map&#x28;Audit_Log&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>Audit_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>system_date</parent><child>audit_log_time</child></connector>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>outputValue</parent><child>jason_audit_data</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>error_code</parent><child>error_category</child></connector>
+       <connector><parent>error_fieldname</parent><child>error_field</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_hl7_OBR</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>sdi_hl7_obr_order_seg</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>process_id</column_name>
+          <stream_name>process_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_0_segment_type_id</column_name>
+          <stream_name>segment_type_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_1_seq_number</column_name>
+          <stream_name>field_2</stream_name>
+        </field>
+        <field>
+          <column_name>obr_2_0_accession_data</column_name>
+          <stream_name>cp_Field_3</stream_name>
+        </field>
+        <field>
+          <column_name>obr_2_1_accession_id</column_name>
+          <stream_name>obr_2_1_accession_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_2_2_application_id</column_name>
+          <stream_name>obr_2_2_application_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_3_0_labcorp_accesion_data</column_name>
+          <stream_name>cp_Field_4</stream_name>
+        </field>
+        <field>
+          <column_name>obr_3_1_labcorp_accesion_id</column_name>
+          <stream_name>obr_3_1_labcorp_accesion_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_3_2_labcorp_app_id</column_name>
+          <stream_name>obr_3_2_labcorp_app_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_4_0_observ_battery_data</column_name>
+          <stream_name>cp_Field_5</stream_name>
+        </field>
+        <field>
+          <column_name>obr_4_1_observ_battery_id</column_name>
+          <stream_name>obr_4_1_observ_battery_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_4_2_observ_batterY_text</column_name>
+          <stream_name>obr_4_2_observ_batterY_text</stream_name>
+        </field>
+        <field>
+          <column_name>obr_4_3_name_coding_system</column_name>
+          <stream_name>obr_4_3_name_coding_system</stream_name>
+        </field>
+        <field>
+          <column_name>obr_5_priority</column_name>
+          <stream_name>Field_6</stream_name>
+        </field>
+        <field>
+          <column_name>obr_6_unused</column_name>
+          <stream_name>Field_7</stream_name>
+        </field>
+        <field>
+          <column_name>obr_8_observ_collection_end_time</column_name>
+          <stream_name>Field_8</stream_name>
+        </field>
+        <field>
+          <column_name>obr_9_collection_urine_volume</column_name>
+          <stream_name>Field_9</stream_name>
+        </field>
+        <field>
+          <column_name>obr_10_collection_id</column_name>
+          <stream_name>Field_10</stream_name>
+        </field>
+        <field>
+          <column_name>obr_11_action_code</column_name>
+          <stream_name>Field_11</stream_name>
+        </field>
+        <field>
+          <column_name>obr_12_danger_code</column_name>
+          <stream_name>Field_12</stream_name>
+        </field>
+        <field>
+          <column_name>obr_13_1_relevant_clinical_info</column_name>
+          <stream_name>Field_13</stream_name>
+        </field>
+        <field>
+          <column_name>obr_14_specimen_rcpt_lab_datetime</column_name>
+          <stream_name>Field_15</stream_name>
+        </field>
+        <field>
+          <column_name>obr_15_source_specimen</column_name>
+          <stream_name>Field_16</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_0_ordering_provider_data</column_name>
+          <stream_name>cp_Field_17</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_1_ordering_provider_id</column_name>
+          <stream_name>obr_16_1_ordering_provider_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_2_ordering_provider_lname</column_name>
+          <stream_name>obr_16_2_ordering_provider_lname</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_3_ordering_provider_f_initial</column_name>
+          <stream_name>obr_16_3_ordering_provider_f_initial</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_4_ordering_provider_m_initial</column_name>
+          <stream_name>obr_16_4_ordering_provider_m_initial</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_5_ordering_provider_suffix</column_name>
+          <stream_name>obr_16_5_ordering_provider_suffix</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_6_ordering_provider_prefix</column_name>
+          <stream_name>obr_16_6_ordering_provider_prefix</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_7_ordering_provider_degree</column_name>
+          <stream_name>obr_16_7_ordering_provider_degree</stream_name>
+        </field>
+        <field>
+          <column_name>obr_16_8_source_table</column_name>
+          <stream_name>obr_16_8_source_table</stream_name>
+        </field>
+        <field>
+          <column_name>obr_17_callback_phone</column_name>
+          <stream_name>Field_18</stream_name>
+        </field>
+        <field>
+          <column_name>obr_18_alt_accession_id</column_name>
+          <stream_name>Field_19</stream_name>
+        </field>
+        <field>
+          <column_name>obr_19_requester_2</column_name>
+          <stream_name>Field_20</stream_name>
+        </field>
+        <field>
+          <column_name>obr_20_0_producer_data</column_name>
+          <stream_name>cp_Field_21</stream_name>
+        </field>
+        <field>
+          <column_name>obr_20_1_producer_field1</column_name>
+          <stream_name>obr_20_1_producer_field1</stream_name>
+        </field>
+        <field>
+          <column_name>obr_20_2_microbiology_organism</column_name>
+          <stream_name>obr_20_2_microbiology_organism</stream_name>
+        </field>
+        <field>
+          <column_name>obr_20_3_coding_system</column_name>
+          <stream_name>obr_20_3_coding_system</stream_name>
+        </field>
+        <field>
+          <column_name>obr_21_producer_field2</column_name>
+          <stream_name>Field_22</stream_name>
+        </field>
+        <field>
+          <column_name>obr_22_observation_datetime</column_name>
+          <stream_name>obr_22_observation_datetime</stream_name>
+        </field>
+        <field>
+          <column_name>obr_23_producer_charge</column_name>
+          <stream_name>obr_23_producer_charge</stream_name>
+        </field>
+        <field>
+          <column_name>obr_24_producer_section_id</column_name>
+          <stream_name>obr_24_producer_section_id</stream_name>
+        </field>
+        <field>
+          <column_name>obr_25_order_result_status</column_name>
+          <stream_name>obr_25_order_result_status</stream_name>
+        </field>
+        <field>
+          <column_name>obr_26_0_linkto_pr_data</column_name>
+          <stream_name>cp_Field_26</stream_name>
+        </field>
+        <field>
+          <column_name>obr_26_1_linkto_pr_ol_s</column_name>
+          <stream_name>obr_26_1_linkto_pr_ol_s</stream_name>
+        </field>
+        <field>
+          <column_name>obr_26_2_subid</column_name>
+          <stream_name>obr_26_2_subid</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_0_quantity_timing_data</column_name>
+          <stream_name>cp_Field_27</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_1_quantity_timing</column_name>
+          <stream_name>obr_27_1_quantity_timing</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_2_unused</column_name>
+          <stream_name>obr_27_2_unused</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_3_unused</column_name>
+          <stream_name>obr_27_3_unused</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_4_unused</column_name>
+          <stream_name>obr_27_4_unused</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_5_unused</column_name>
+          <stream_name>obr_27_5_unused</stream_name>
+        </field>
+        <field>
+          <column_name>obr_27_6_priority</column_name>
+          <stream_name>obr_27_6_priority</stream_name>
+        </field>
+        <field>
+          <column_name>obr_28_courtesy_copies_to</column_name>
+          <stream_name>obr_28_courtesy_copies_to</stream_name>
+        </field>
+        <field>
+          <column_name>obr_29_link_to_parent_order</column_name>
+          <stream_name>obr_29_link_to_parent_order</stream_name>
+        </field>
+        <field>
+          <column_name>pid_3_lab_assign_pid</column_name>
+          <stream_name>joe</stream_name>
+        </field>
+        <field>
+          <column_name>row_number</column_name>
+          <stream_name>row_number</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>864</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+      <error>
+        <source_step>dv&#x3a; Data Validator</source_step>
+        <target_step>Json output</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

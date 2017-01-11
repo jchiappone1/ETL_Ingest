@@ -1,0 +1,1002 @@
+<transformation>
+  <info>
+    <name>Maxim_Member_Stage</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Ingestion&#x2f;Client_Transforms</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection>IQ</connection>
+<schema/>
+<table>sdi_transform_logs</table>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user/>
+  <created_date>2016&#x2f;09&#x2f;25 16&#x3a;24&#x3a;33.295</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#x2f;12&#x2f;27 18&#x3a;00&#x3a;15.767</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>ETL Logging</note>
+      <xloc>1024</xloc>
+      <yloc>64</yloc>
+      <width>88</width>
+      <heigth>26</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>1. Program ID is identified in the filename for lookups e.g.&#xa;    server&#x3a; prod-app-pentaho-1&#x28;lume&#x29;&#xa;    path&#x3a;    &#x2f;srv&#x2f;notification&#x2f;labs&#x2f;maxim&#x2f;results&#xa;    folder&#x3a;  Augusta2016&#xa;    file&#x3a;  bioiq_maxim_Augusta2016_screeningbiometrics_20161115  &#xa;   invitation_code&#x3a;  Augusta2016&#xa;&#xa;2.  DoB allows nulls now, ill formed are set to null in catch block -- validation is off &#x28;catch block&#x29; - JBoss to handle all errors&#xa;</note>
+      <xloc>0</xloc>
+      <yloc>512</yloc>
+      <width>768</width>
+      <heigth>154</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>204</backgroundcolorred>
+      <backgroundcolorgreen>204</backgroundcolorgreen>
+      <backgroundcolorblue>204</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Failed validation&#x3a;&#xa;&#x23;check all maxim files that failed to load, most likely columns out of alignment &#xa;&#xa; select short_filename, parent_job_id&#xa; from sdi_file_monitor&#xa;where parent_job_id &#x3d;18&#xa;  and short_filename not in&#xa;&#x28;select file_path from  MedTest&#xa;&#x23;where process_id &#x3d; 18&#xa; &#x29;&#xa;&#x3b;&#xa;&#xa;&#xa;&#xa;SELECT  bl.&#x2a;, etl.status, etl.log_field &#x23;etl.startdate, etl.enddate,&#xa;FROM sdi_bridge_logger bl, sdi_transform_logs etl&#xa;where bl.transform_batch_id &#x3d; etl.id_batch&#xa;and job_id &#x3d; 18&#xa;and bl.file_name &#x3d; &#x27;bioiq_maxim_Boeing2016_screeningbiometrics_pre-populated_20160903.csv&#x27; &#xa;&#xa;keys to check for are&#x3a; field 1 &#x3d; numeric, field -2  date , field3 &#x3d; alpha,  Gender &#x3d; 1 Char&#xa;</note>
+      <xloc>880</xloc>
+      <yloc>528</yloc>
+      <width>616</width>
+      <heigth>362</heigth>
+      <fontname>.Helvetica Neue DeskInterface</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>IQ</name>
+    <server>&#x24;&#x7b;bioiq.cm.db.server&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;bioiq.cm.db.name&#x7d;</database>
+    <port>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</port>
+    <username>&#x24;&#x7b;bioiq.cm.db.user&#x7d;</username>
+    <password>&#x24;&#x7b;bioiq.cm.db.password&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;bioiq.cm.db.port&#x7d;</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Json output 2</from><to>si&#x3a;Get System Info 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Json output 2</from><to>maxim_error</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script - DoB dates</from><to>dv&#x3a; Data Validator</to><enabled>Y</enabled> </hop>
+  <hop> <from>dv&#x3a; Data Validator</from><to>Json output 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>si&#x3a;Get System Info 2 2</from><to>Mapping &#x28;sub-transformation&#x29; 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Set field value</from><to>wl&#x3a;Maxim_Member_Stage</to><enabled>Y</enabled> </hop>
+  <hop> <from>gr&#x3a; Get rows from result</from><to>si&#x3a;Get System Info</to><enabled>Y</enabled> </hop>
+  <hop> <from>si&#x3a;Get System Info</from><to>Set field value</to><enabled>Y</enabled> </hop>
+  <hop> <from>wl&#x3a;Maxim_Member_Stage</from><to>st&#x3a; Mapping &#x28;sub-transformation&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>get client_id</from><to>Multiway Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>to&#x3a; sdi_maxim_stage_one </from><to>Multiway Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Multiway Merge Join</from><to>Modified Java Script - DoB dates</to><enabled>Y</enabled> </hop>
+  <hop> <from>dj&#x3a; lookup client_id-program_id</from><to>get client_id</to><enabled>Y</enabled> </hop>
+  <hop> <from>dv&#x3a; Data Validator</from><to>to&#x3a; Member_Stage</to><enabled>Y</enabled> </hop>
+  <hop> <from>wl&#x3a;Maxim_Member_Stage</from><to>sv_remove</to><enabled>N</enabled> </hop>
+  <hop> <from>sv_remove</from><to>dj&#x3a; lookup client_id-program_id</to><enabled>N</enabled> </hop>
+  <hop> <from>wl&#x3a;Maxim_Member_Stage</from><to>dj&#x3a; lookup client_id-program_id</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Json output 2</name>
+    <type>JsonOutput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <outputValue>maxim_member</outputValue>
+    <jsonBloc>maxim_member</jsonBloc>
+    <nrRowsInBloc>1</nrRowsInBloc>
+    <operation_type>outputvalue</operation_type>
+    <compatibility_mode>N</compatibility_mode>
+    <encoding>UTF-8</encoding>
+    <addtoresult>N</addtoresult>
+    <file>
+      <name/>
+      <extention>js</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <create_parent_folder>N</create_parent_folder>
+      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
+      <servlet_output>N</servlet_output>
+      </file>
+    <fields>
+      <field>
+        <name>EmployeeId</name>
+        <element>error_fieldname</element>
+    </field>
+      <field>
+        <name>error_code</name>
+        <element>error_code</element>
+    </field>
+      <field>
+        <name>review_code</name>
+        <element>error_description</element>
+    </field>
+      <field>
+        <name>error_count</name>
+        <element>error_count</element>
+    </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>720</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mapping &#x28;sub-transformation&#x29; 2 2</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>Audit_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>system_date</parent><child>audit_log_time</child></connector>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>maxim_member</parent><child>jason_audit_data</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>error_code</parent><child>error_category</child></connector>
+       <connector><parent>error_fieldname</parent><child>error_field</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script - DoB dates</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;zero base&#x3a;  jan &#x3d; 0, feb &#x3d; 1 &#xa;&#x2f;&#x2f; DoB  &#x3d; 3&#x2f;17&#x2f;2016&#xa;&#x2f;&#x2f; convert to 2016-03-17   yyyy-mm-dd&#xa;&#x2f;&#x2f; returns jr_dob_date &#x3d; 2016-03-17&#xa;&#xa;review_code &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;try &#x7b; &#xa;&#xa;&#xa;&#x2f;&#x2f;set values to null for the logs&#xa;s_dob_mm &#x3d; &#x22;&#x22;&#x3b;&#xa;s_dob_dd &#x3d; &#x22;&#x22;&#x3b;&#xa;s_dob_yyyy &#x3d; &#x22;&#x22;&#x3b;&#xa;j_dob_dd &#x3d; &#x22;&#x22;&#x3b;&#xa;j_dob_mm &#x3d; &#x22;&#x22;&#x3b;&#xa;j_dob_yy &#x3d; &#x22;&#x22;&#x3b;&#xa;r_dob_date &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;s_dob_date &#x3d; DoB  &#x3b; &#xa;j_dob_date &#x3d; &#x28;&#x21;s_dob_date&#x29; &#x3f; new java.lang.String&#x28;&#x22;&#x22;&#x29; &#x3a; new java.lang.String&#x28;s_dob_date&#x29; &#x3b;&#xa;l_dob_date &#x3d; j_dob_date.length&#x28;&#x29;&#x3b;&#xa;b_check_len    &#x3d;  l_dob_date &#x3e;&#x3d; 8 &#x26;&#x26;  l_dob_date &#x3c;&#x3d; 10 &#x3f; 1 &#x3a; 0&#x3b;&#xa;b_mm_slash &#x3d;  j_dob_date.indexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x3b;&#xa;s_dob_yyyy &#x3d;  j_dob_date.substring&#x28;j_dob_date.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29; &#x2b;1 , l_dob_date&#x29; &#x3b;&#xa;s_dob_mm &#x3d; j_dob_date.substring&#x28;0, b_mm_slash &#x29;&#x3b; &#xa;s_dob_dd &#x3d; j_dob_date.substring&#x28;b_mm_slash &#x2b;1, j_dob_date.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29; &#x29;&#x3b; &#xa;&#xa;j_dob_mm &#x3d; new java.lang.String&#x28;s_dob_mm&#x29;&#x3b;&#xa;j_dob_mm &#x3d; j_dob_mm.length&#x28;&#x29; &#x3c; 2 &#x3f; &#x22;0&#x22; &#x2b; j_dob_mm  &#x3a; j_dob_mm&#x3b;&#xa;&#xa;j_dob_dd &#x3d; new java.lang.String&#x28;s_dob_dd&#x29;&#x3b;&#xa;j_dob_dd &#x3d; j_dob_dd.length&#x28;&#x29; &#x3c; 2 &#x3f; &#x22;0&#x22; &#x2b; j_dob_dd  &#x3a; s_dob_dd&#x3b;&#xa;&#xa;j_dob_yy &#x3d; new java.lang.String&#x28;s_dob_yyyy&#x29;&#x3b;&#xa;j_dob_yy &#x3d; j_dob_yy.length&#x28;&#x29; &#x3d;&#x3d; 2 &#x3f; &#x22;20&#x22; &#x2b; j_dob_yy  &#x3a; s_dob_yyyy&#x3b;&#xa;&#xa;r_dob_date &#x3d;  j_dob_yy &#x2b; &#x22;-&#x22; &#x2b; j_dob_mm &#x2b; &#x22;-&#x22; &#x2b; j_dob_dd&#x3b;&#xa;jr_dob_date &#x3d; new java.lang.String&#x28;r_dob_date &#x29;&#x3b;&#xa;b_dob_date &#x3d; jr_dob_date.matches&#x28;&#x22;&#x5e;&#x5b;0-9&#x5d;&#x7b;4&#x7d;-&#x28;&#x28;&#x28;0&#x5b;13578&#x5d;&#x7c;&#x28;10&#x7c;12&#x29;&#x29;-&#x28;0&#x5b;1-9&#x5d;&#x7c;&#x5b;1-2&#x5d;&#x5b;0-9&#x5d;&#x7c;3&#x5b;0-1&#x5d;&#x29;&#x29;&#x7c;&#x28;02-&#x28;0&#x5b;1-9&#x5d;&#x7c;&#x5b;1-2&#x5d;&#x5b;0-9&#x5d;&#x29;&#x29;&#x7c;&#x28;&#x28;0&#x5b;469&#x5d;&#x7c;11&#x29;-&#x28;0&#x5b;1-9&#x5d;&#x7c;&#x5b;1-2&#x5d;&#x5b;0-9&#x5d;&#x7c;30&#x29;&#x29;&#x29;&#x24;&#x22;&#x29;&#x3b;&#xa;&#xa;&#xa;&#xa;     &#xa;&#x7d; catch &#x28;e&#x29; &#x7b;&#xa;&#xa;	review_code &#x3d; e&#x3b;&#xa;    &#x2f;&#x2f;jr_dob_date &#x3d; &#x27;0000-00-00&#x27;&#xa;     jr_dob_date &#x3d; &#x22;&#x22;&#x3b;&#xa;     b_dob_date &#x3d; true&#x3b;&#xa;     s_employee_id &#x3d;  EmployeeId&#x3b;&#xa;	&#xa;&#xa;    &#xa;&#x7d;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>s_dob_date</name>
+        <rename>s_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob_date</name>
+        <rename>j_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>l_dob_date</name>
+        <rename>l_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_check_len</name>
+        <rename>b_check_len</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_mm_slash</name>
+        <rename>b_mm_slash</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>s_dob_yyyy</name>
+        <rename>s_dob_yyyy</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>s_dob_mm</name>
+        <rename>s_dob_mm</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>s_dob_dd</name>
+        <rename>s_dob_dd</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob_mm</name>
+        <rename>j_dob_mm</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob_dd</name>
+        <rename>j_dob_dd</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob_dd</name>
+        <rename>j_dob_dd</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>j_dob_yy</name>
+        <rename>j_dob_yy</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>r_dob_date</name>
+        <rename>r_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>jr_dob_date</name>
+        <rename>jr_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>b_dob_date</name>
+        <rename>b_dob_date</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>review_code</name>
+        <rename>review_code</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>error_code</name>
+        <rename>error_code</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>720</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Multiway Merge Join</name>
+    <type>MultiwayMergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <join_type>FULL OUTER</join_type>
+    <step0>get client_id</step0>
+    <step1>to&#x3a; sdi_maxim_stage_one </step1>
+    <number_input>2</number_input>
+    <keys>
+      <key>parent_job_id</key>
+      <key>parent_job_id</key>
+    </keys>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>368</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set field value</name>
+    <type>SetValueField</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>trans_batch_id</name>
+        <replaceby>p_trans_batch_id</replaceby>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <replaceby>p_transform_name</replaceby>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dj&#x3a; lookup client_id-program_id</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <rowlimit>1</rowlimit>
+    <sql> select coalesce&#x28;program_lookup.program_id,0&#x29;program_id,coalesce&#x28;program_lookup.program_code,&#x22;default&#x22;&#x29;program_code, coalesce&#x28;program_lookup.client_id,131&#x29;client_id&#xa; from &#x28;&#xa; select distinct&#x28;program_id&#x29;,program_code,  client_id &#xa;from Program&#xa;where program_code &#x3d; &#x3f;&#xa;union &#xa;select null, null, null&#xa;limit 1&#xa;&#xa;&#x29;program_lookup&#xa;&#x3b;</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>invitation_code</name>
+        <type>String</type>
+      </field>
+    </parameter>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dv&#x3a; Data Validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<validate_all>Y</validate_all>
+<concat_errors>Y</concat_errors>
+<concat_separator>&#x7c;</concat_separator>
+       <validator_field><name>b_dob_date</name>
+<validation_name>DoB_date_isvalid</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>N</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>N</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code>dob_error</error_code>
+<error_description>invalid_dob</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value><value>true</value>
+</allowed_value></validator_field>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>720</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get client_id</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Database lookup - get client_id</logmessage>
+    <fields>
+      <field>
+        <name>client_id</name>
+        </field>
+      <field>
+        <name>parent_job_id</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>gr&#x3a; Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>shortfilename</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>size</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>extension</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>uri</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>lastmodifiedtime</name>
+        <type>Timestamp</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>invitation_code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>80</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>maxim_error</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>maxim_error</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>592</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>si&#x3a;Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>ip</name>
+        <type>IP address</type>
+        </field>
+      <field>
+        <name>p_transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>p_trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>si&#x3a;Get System Info 2 2</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>system_date</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      <field>
+        <name>transform_name</name>
+        <type>transformation name</type>
+        </field>
+      <field>
+        <name>trans_batch_id</name>
+        <type>batch ID</type>
+        </field>
+      <field>
+        <name>parent_job_id</name>
+        <type>job batch ID</type>
+        </field>
+      <field>
+        <name>start_log_time</name>
+        <type>end date range</type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>st&#x3a; Mapping &#x28;sub-transformation&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>rep_name</specification_method>
+    <trans_object_id/>
+    <trans_name>ETL_Log</trans_name>
+    <filename/>
+    <directory_path>&#x2f;Ingestion&#x2f;Reusable_Transforms</directory_path>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>parent_job_id</parent><child>parent_job_id</child></connector>
+       <connector><parent>trans_batch_id</parent><child>trans_batch_id</child></connector>
+       <connector><parent>transform_name</parent><child>trans_name</child></connector>
+       <connector><parent>shortfilename</parent><child>file_name</child></connector>
+       <connector><parent>ip</parent><child>ip</child></connector>
+       <connector><parent>system_date</parent><child>system_date</child></connector>
+       <connector><parent>start_log_time</parent><child>start_log_time</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>880</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sv_remove</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>ClinicNumber</name>
+      </remove>      <remove>        <name>ScreeningDate</name>
+      </remove>      <remove>        <name>EmployeeId</name>
+      </remove>      <remove>        <name>FirstName</name>
+      </remove>      <remove>        <name>LastName</name>
+      </remove>      <remove>        <name>Gender</name>
+      </remove>      <remove>        <name>DoB</name>
+      </remove>      <remove>        <name>TotalCholesterolScreening</name>
+      </remove>      <remove>        <name>HDLScreening</name>
+      </remove>      <remove>        <name>TriglyceridesScreening</name>
+      </remove>      <remove>        <name>TCOverHDLScreening</name>
+      </remove>      <remove>        <name>LDLsScreening</name>
+      </remove>      <remove>        <name>FastingGlucose</name>
+      </remove>      <remove>        <name>NonFastingGlucose</name>
+      </remove>      <remove>        <name>SystolicBPScreening</name>
+      </remove>      <remove>        <name>DiastolicBPScreening</name>
+      </remove>      <remove>        <name>BMIScreening</name>
+      </remove>      <remove>        <name>BodyFatPercentageScreening</name>
+      </remove>      <remove>        <name>BoneDensityTScore</name>
+      </remove>      <remove>        <name>HeightFt</name>
+      </remove>      <remove>        <name>HeightInplusHeightFractionScreening</name>
+      </remove>      <remove>        <name>WeightplusWeightFractionScreening</name>
+      </remove>      <remove>        <name>RestingHeartRateScreening</name>
+      </remove>      <remove>        <name>WaistplusWaistfractionScreening</name>
+      </remove>      <remove>        <name>A1CPercentageScreening</name>
+      </remove>      <remove>        <name>Nicotine</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; Member_Stage</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <schema/>
+    <table>Member_Stage</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>bioiq_id</column_name>
+          <stream_name>EmployeeId</stream_name>
+        </field>
+        <field>
+          <column_name>gender</column_name>
+          <stream_name>Gender</stream_name>
+        </field>
+        <field>
+          <column_name>client_id</column_name>
+          <stream_name>client_id</stream_name>
+        </field>
+        <field>
+          <column_name>program_id</column_name>
+          <stream_name>program_id</stream_name>
+        </field>
+        <field>
+          <column_name>process_id</column_name>
+          <stream_name>parent_job_id</stream_name>
+        </field>
+        <field>
+          <column_name>lname</column_name>
+          <stream_name>LastName</stream_name>
+        </field>
+        <field>
+          <column_name>fname</column_name>
+          <stream_name>FirstName</stream_name>
+        </field>
+        <field>
+          <column_name>dob</column_name>
+          <stream_name>jr_dob_date</stream_name>
+        </field>
+        <field>
+          <column_name>alt_member_id</column_name>
+          <stream_name>Unique_Id</stream_name>
+        </field>
+        <field>
+          <column_name>program_code</column_name>
+          <stream_name>invitation_code</stream_name>
+        </field>
+        <field>
+          <column_name>processed_file</column_name>
+          <stream_name>shortfilename</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>976</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to&#x3a; sdi_maxim_stage_one </name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IQ</connection>
+    <sql>select &#x2a; from sdi_maxim_stage_one&#xa;&#x3b;&#xa;</sql>
+    <limit/>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>368</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>wl&#x3a;Maxim_Member_Stage</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Log Maxim_Member_Stage</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+      <error>
+        <source_step>dv&#x3a; Data Validator</source_step>
+        <target_step>Json output 2</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename>error_count</nr_valuename>
+        <descriptions_valuename>error_description</descriptions_valuename>
+        <fields_valuename>error_fieldname</fields_valuename>
+        <codes_valuename>error_code</codes_valuename>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>to&#x3a; Member_Stage</source_step>
+        <target_step/>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename>error_count</nr_valuename>
+        <descriptions_valuename>error_description</descriptions_valuename>
+        <fields_valuename>error_fieldname</fields_valuename>
+        <codes_valuename>error_code</codes_valuename>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
